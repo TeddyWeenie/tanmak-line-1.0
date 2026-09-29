@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>작전 설명 · 탄막 조립선 1.0</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      overflow: auto;
+      height: auto;
+      min-height: 100%;
+    }
+    .g {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 16px 16px 112px;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      color: var(--text);
+    }
+    .g-nav {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+    .g-nav strong { font-size: 14px; }
+    .g-nav .ver { color: var(--dim); font-size: 11px; margin-left: 6px; }
+    .g a.btn, .g-nav a.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      background: var(--ok);
+      color: #102018;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .g a.ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .g .tag {
+      color: var(--power);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 28px 0 10px;
+    }
+    .g h1 {
+      font-size: 32px;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin: 0 0 12px;
+    }
+    .g h2 { font-size: 20px; margin: 0 0 12px; }
+    .g p { color: var(--dim); line-height: 1.55; margin: 0 0 12px; }
+    .g .lead { color: var(--text); max-width: 40em; }
+    .g .row { display: grid; gap: 8px; margin: 12px 0 20px; }
+    @media (min-width: 640px) {
+      .g .row.three { grid-template-columns: 1fr 1fr 1fr; }
+      .g .row.two { grid-template-columns: 1fr 1fr; }
+    }
+    .g .box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .g .box h3 { margin: 0 0 6px; font-size: 15px; }
+    .g .step { display: flex; gap: 12px; align-items: flex-start; }
+    .g .step img, .g .box img {
+      width: 40px;
+      height: 40px;
+      image-rendering: pixelated;
+      flex-shrink: 0;
+    }
+    .g ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .g .n { color: var(--ok); font-size: 11px; letter-spacing: 0.08em; }
+    .g kbd {
+      display: inline-block;
+      min-width: 4.5rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .g dl { margin: 0; display: grid; gap: 6px; }
+    .g .line { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .g .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+    .g-toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 8px; }
+    .g-toc a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--dim);
+      text-decoration: none;
+      background: var(--panel);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <article class="g">
+    <nav class="g-nav">
+      <strong>탄막 조립선 <span class="ver">1.0</span></strong>
+      <a class="btn" href="index.html">거점 선택</a>
+    </nav>
+    <p class="tag">직조함 N-07 · 블랙박스 · 릴리스 1.0</p>
+    <h1>함은 스스로 쏜다.<br />탄약이 없으면 공장이 죽는다.</h1>
+    <p class="lead">탄막 조립선은 자동 사격 서바이벌과 공장 건설을 겹친 게임이다. 너는 조준하지 않는다. 광맥을 열고, 벨트를 잇고, 탄약 한 줄을 끊기지 않게 유지한다.</p>
+    <p>
+      <a class="btn" href="index.html">S1부터 낙하</a>
+      <a class="ghost" href="#first">첫 60초만 보기</a>
+    </p>
+    <nav class="g-toc" aria-label="목차">
+      <a href="#core">한 줄</a>
+      <a href="#first">첫 낙하</a>
+      <a href="#line">생산 라인</a>
+      <a href="#build">건물</a>
+      <a href="#controls">조작</a>
+      <a href="#stages">거점</a>
+      <a href="#foes">적</a>
+    </nav>
+
+    <h2 id="core">세 가지만 기억하면 된다</h2>
+    <div class="row three">
+      <div class="box"><h3>장전 키는 없다</h3><p>노란 탄약, 조립기 출력, 벨트 위 탄약을 E로 줍는다. 0이 되면 함이 멈춘다.</p></div>
+      <div class="box"><h3>전력이 먼저다</h3><p>발전기 반경 8칸 안의 기계만 돈다. 낙하하면 발전기(6)부터.</p></div>
+      <div class="box"><h3>함은 자동이다</h3><p>조준·발사는 함이 한다. 너는 라인과 포탑 보급을 맡는다.</p></div>
+    </div>
+
+    <h2 id="first">첫 낙하 — S1</h2>
+    <p>인벤에 발전기 1, 채굴기 2, 벨트 16, 투입기 4, 조립기 1, 포탑 2, 탄약 80. 첫 파도까지 약 40초.</p>
+    <ol>
+      <li class="box step"><img src="sprites/generator.png" alt="" /><div><p class="n">01</p><h3>발전기를 놓는다</h3><p>6번을 고르고 주황 광맥 근처에 탭한다.</p></div></li>
+      <li class="box step"><img src="sprites/miner.png" alt="" /><div><p class="n">02</p><h3>채굴기를 광맥 위에</h3><p>1번 채굴기를 주황 칸 위에 놓는다.</p></div></li>
+      <li class="box step"><img src="sprites/belt.png" alt="" /><div><p class="n">03</p><h3>벨트와 투입기로 잇는다</h3><p>채굴기 → 벨트 → 투입기 → 조립기. 벨트는 드래그, 투입기는 R로 회전.</p></div></li>
+      <li class="box step"><img src="sprites/item_ammo.png" alt="" /><div><p class="n">04</p><h3>탄약을 줍는다</h3><p>조립기 옆에 서서 E. 장전 버튼은 없다.</p></div></li>
+      <li class="box step"><img src="sprites/grub.png" alt="" /><div><p class="n">05</p><h3>북쪽이 온다</h3><p>함은 알아서 쏜다. 탄약이 끊기지 않게 라인을 돌려라.</p></div></li>
+    </ol>
+
+    <h2 id="line">생산 라인</h2>
+    <p class="line">
+      <span class="chip"><img src="sprites/miner.png" alt="" width="28" height="28" />채굴기</span>
+      <span class="chip"><img src="sprites/belt.png" alt="" width="28" height="28" />벨트</span>
+      <span class="chip"><img src="sprites/inserter.png" alt="" width="28" height="28" />투입기</span>
+      <span class="chip"><img src="sprites/assembler.png" alt="" width="28" height="28" />조립기</span>
+      <span class="chip"><img src="sprites/item_ammo.png" alt="" width="28" height="28" />탄약</span>
+    </p>
+    <p>벨트는 방향이 없다. 탄약은 플레이어 총, 포탄은 포탑 전용. C로 건물을 더 만든다.</p>
+
+    <h2 id="build">건물 여섯</h2>
+    <div class="row two">
+      <div class="box step"><img src="sprites/miner.png" alt="" /><div><h3>1 채굴기 · 광석 3</h3><p>광맥 위에. 고갈되면 옮긴다.</p></div></div>
+      <div class="box step"><img src="sprites/belt.png" alt="" /><div><h3>2 벨트 · 광석 1</h3><p>드래그로 길을 그린다. 방향 없음.</p></div></div>
+      <div class="box step"><img src="sprites/inserter.png" alt="" /><div><h3>3 투입기 · 광석 1</h3><p>옆 칸을 집거나 넣는다. R로 회전.</p></div></div>
+      <div class="box step"><img src="sprites/assembler.png" alt="" /><div><h3>4 조립기 · 광석 5</h3><p>광석 1 = 탄약 1. T로 포탄 레시피.</p></div></div>
+      <div class="box step"><img src="sprites/turret.png" alt="" /><div><h3>5 포탑 · 광석 6</h3><p>자동 사격. 옆에 서서 E로 보급.</p></div></div>
+      <div class="box step"><img src="sprites/generator.png" alt="" /><div><h3>6 발전기 · 광석 5</h3><p>반경 8칸. 낙하하면 이것부터.</p></div></div>
+    </div>
+
+    <h2 id="controls">조작</h2>
+    <div class="row two">
+      <div class="box">
+        <h3>키보드</h3>
+        <dl>
+          <div><kbd>WASD</kbd> 이동</div>
+          <div><kbd>1–6</kbd> 건물 선택</div>
+          <div><kbd>클릭</kbd> 설치 · 벨트 드래그</div>
+          <div><kbd>C</kbd> 제작</div>
+          <div><kbd>E</kbd> 줍기 / 수리 / 보급</div>
+          <div><kbd>R</kbd> 회전 · <kbd>X</kbd> 철거 · <kbd>T</kbd> 레시피</div>
+          <div><kbd>P</kbd> 일시정지 · <kbd>H</kbd> 도움말</div>
+        </dl>
+      </div>
+      <div class="box">
+        <h3>터치</h3>
+        <p>왼쪽 스틱 이동. 위쪽 칸에서 건물 선택, 맵을 눌러 설치. 오른쪽은 줍기·제작·회전·철거. 줍기는 누르고 있으면 반복. 함은 스스로 쏜다.</p>
+      </div>
+    </div>
+
+    <h2 id="stages">캠페인</h2>
+    <ol>
+      <li class="box"><h3>S1 낙하 광맥</h3><p>탄약 한 줄을 만들고 북쪽 4파도를 버틴다. 발전기부터.</p></li>
+      <li class="box"><h3>S2 벨트 협곡</h3><p>좌우 광맥을 잇고 포탑 두 기가 한 발 이상 쏘게 한다.</p></li>
+      <li class="box"><h3>S3 식철 둥지</h3><p>7파도. 건물 파괴 3회를 넘기지 말 것. 라인은 고리 안.</p></li>
+      <li class="box"><h3>S4 정전 분지</h3><p>발전기 두 대를 켠 채로 5파도를 유지한다.</p></li>
+      <li class="box"><h3>S5 군체핵</h3><p>8파도 안에 산란충 3마리를 처치한다. 캠페인 클리어.</p></li>
+    </ol>
+
+    <h2 id="foes">식철 군체</h2>
+    <div class="row two">
+      <div class="box step"><img src="sprites/grub.png" alt="" /><div><h3>식철충</h3><p>느리다. S1부터.</p></div></div>
+      <div class="box step"><img src="sprites/runner.png" alt="" /><div><h3>질주충</h3><p>빠르다. S2부터.</p></div></div>
+      <div class="box step"><img src="sprites/chewer.png" alt="" /><div><h3>포식충</h3><p>건물을 부순다. S3부터.</p></div></div>
+      <div class="box step"><img src="sprites/wire.png" alt="" /><div><h3>전선충</h3><p>전류를 추적한다. S4부터.</p></div></div>
+      <div class="box step"><img src="sprites/spawner.png" alt="" /><div><h3>산란충</h3><p>죽으면 분열. S5 목표.</p></div></div>
+    </div>
+
+    <div class="box" style="margin-top:24px">
+      <p class="tag" style="margin-top:0">N-07</p>
+      <h2>광맥을 열고, 선을 잇고, 거점을 유지하라.</h2>
+      <p>릴리스 1.0 — S1~S5, 터치 조작, 작전 설명.</p>
+      <p><a class="btn" href="index.html">거점 선택으로</a></p>
+    </div>
+  </article>
+</body>
+</html>

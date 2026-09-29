@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>탄막 조립선</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="opening.css" />
 </head>
 <body>
   <div id="wrap">
@@ -22,35 +23,16 @@
         <canvas id="c"></canvas>
         <div id="toast"></div>
         <div id="ammoWarn" class="hidden">탄약 없음 — 장전 키는 없다. 노란 탄약을 줍거나 조립기 엽에 서라</div>
-        <div id="touchHud" class="hidden">
-          <div id="stickPad" aria-label="이동 스틱">
-            <div id="stickRing"></div>
-            <div id="stickKnob"></div>
-          </div>
-          <div id="touchActs">
-            <button type="button" class="touch-btn main" data-act="e">줍기</button>
-            <button type="button" class="touch-btn" data-act="c">제작</button>
-            <button type="button" class="touch-btn" data-act="r">회전</button>
-            <button type="button" class="touch-btn" data-act="x">철거</button>
-            <button type="button" class="touch-btn" data-act="t">레시피</button>
-            <button type="button" class="touch-btn" data-act="p">정지</button>
-          </div>
-        </div>
         <div id="overlay">
           <div class="card" id="card">
             <p class="log-tag">직조함 N-07 · 블랙박스 · 릴리스 1.0</p>
             <h1>탄막 조립선</h1>
             <p class="lead">함은 스스로 쏠다. 탄약이 없으면 공장이 죽는다.</p>
-            <p>광맥을 열고, 선을 잇고, 거점을 유지하라. 회수 신호는 없다.</p>
             <button id="startBtn" type="button">거점 선택</button>
-          <a href="guide.html" id="guideBtn" class="ghost">처음이라면 — 작전 설명</a>
+            <a href="guide.html" id="guideBtn" class="ghost">처음이라면 — 작전 설명</a>
           </div>
         </div>
       </div>
-    </div>
-    <div id="helpTpl" class="hidden">
-      <h2>조작</h2>
-      <p>WASD 이동 · 1–6 선택 · R 회전 · 클릭 설치 · 벨트는 드래그로 경로 · X 철거 · C 제작 · E 줍기/수리 · T 레시피 · H 도움말 · P 일시정지</p>
     </div>
   </div>
   <div id="opening" class="opening">
@@ -85,7 +67,6 @@
       arm.addEventListener("click", function (e) {
         e.stopPropagation();
         vid.muted = false;
-        vid.volume = 0.85;
         vid.play().catch(function () {});
         arm.classList.add("hidden");
       });

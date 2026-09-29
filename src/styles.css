@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #080b0a;
+  --color-surface: #121916;
+  --color-elevated: #101714;
+  --color-fg: #d7ece2;
+  --color-muted: #8aa396;
+  --color-primary: #7ee0b0;
+  --color-border: #2a3a32;
+  --color-power: #5ee0ff;
+  --color-danger: #e85d5d;
+  --color-ink: #102018;
+  --font-sans: "Segoe UI", "Noto Sans KR", system-ui, sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.game-shell {
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  background: #080b0a;
+}
+
+.game-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #080b0a;
+}
+
+html:has(.guide-page) {
+  scroll-behavior: smooth;
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: auto;
+}
+body:has(.guide-page) {
+  height: auto;
+  min-height: 100%;
+  overflow: visible;
+  overscroll-behavior: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.guide-page) {
+    scroll-behavior: auto;
+  }
+}
+
+.guide-spr {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.guide-spr-lg {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}

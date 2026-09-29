@@ -1,0 +1,48 @@
+.opening {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: #0d1210;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.opening.off { display: none; }
+.opening video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #0d1210;
+}
+.opening-arm {
+  position: absolute;
+  left: 50%;
+  bottom: 22%;
+  transform: translateX(-50%);
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid #3a4a42;
+  background: rgba(13, 18, 16, 0.82);
+  color: #e8dcc0;
+  font: 600 15px/1 sans-serif;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+#openingSkip {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid #3a4a42;
+  background: rgba(13, 18, 16, 0.72);
+  color: #d4c7a1;
+  font: 600 13px/1 sans-serif;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+#openBtn {
+  display: block;
+  width: 100%;
+  margin: 8px 0 0;
+}
